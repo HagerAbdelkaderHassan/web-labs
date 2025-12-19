@@ -1,0 +1,110 @@
+
+    h2{
+      color:rgb(8, 3, 84);
+      text-decoration: underline;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-style: oblique;
+      border-style: initial;
+      border-width: 4px 3px ;
+      border-color: aliceblue;
+      background-color: rgb(255, 255, 255);
+      border: solid 4px rgb(35, 35, 120);
+      border-top:dotted rgb(233, 239, 234);
+      border-right:solid 14 px rgb(35, 39, 80) ;
+      border-left:solid 6px rgb(79, 125, 206) ;
+      padding: 20px ;
+      padding:10px 12px ;
+      margin: 3px ;
+
+     }
+     h1{
+        color: rgb(33, 37, 164);
+     }
+     .cls2{
+        color: rgb(21, 35, 126);
+     }
+     ul{
+        color: rgb(15, 39, 135);
+     }
+     #id1{
+        color: rgb(8, 8, 149);
+     }
+     #id2{
+        color: rgb(21, 21, 204);
+     }
+    a:link{
+      color: rgb(239, 220, 220);
+      text-decoration: none;
+   
+    }
+    a:visited{
+      color: rgb(29, 78, 78);
+      font-size: 2px;
+
+    }
+    a:active{
+      color: rgb(255, 255, 255);
+      text-decoration: rgb(163, 100, 19);
+    }
+    body{
+      background-color: rgb(239, 239, 239);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    body{
+     
+      background-repeat:no-repeat ;
+      background-size: cover;
+      font: 100;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .div{
+      background-color: rgb(255, 255, 255);
+      width: 30%;;
+    }
+    .div1{
+      background-color: rgb(255, 255, 255);
+    }
+    
+    h3{
+      display: inline-block;
+
+    }
+    ol{
+       display: non;
+    }
+   .overflow{
+  border:solid rgb(29, 29, 102) 5px;
+  width:300px;
+  height:200px;
+  overflow:auto ;
+}
+
+.container{
+  background-color: bisque;
+  display: flex;
+  height: 290px;;
+  flex-direction:column;
+  /* flex-wrap: wrap-reverse; */
+  /* flex-flow: row wrap-reverse;
+  justify-content:start;
+  justify-content:space-evenly;
+  align-items: center; */
+ flex-flow: column wrap-reverse;
+  justify-content:start;
+  justify-content:space-evenly;
+  align-items:center ;
+  
+
+}
+.child1{
+  background-color: rgb(40, 73, 194);
+}
+.child2{
+  background-color: rgb(16, 22, 192);
+}
+.child3{
+  background-color: rgb(86, 111, 211);
+}
+.child4{
+  background-color: rgb(38, 123, 208);
+}
