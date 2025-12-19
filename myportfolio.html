@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hager Abdelkader | Cybersecurity Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        :root {
+            --primary: #111111;
+            --secondary: #333333;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            background-color: white;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 100px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            max-width: 500px;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Work Experience */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .exp-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .exp-company {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .exp-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .exp-description {
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-card:last-child {
+            border-bottom: none;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-date {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-description {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #eff6ff;
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Hackathons */
+        .hackathons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .hackathon-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+
+        .hackathon-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hackathon-date {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .hackathon-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hackathon-description {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact-content {
+            max-width: 600px;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-img {
+                max-width: 300px;
+                height: 300px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-image {
+                height: 200px;
+                order: -1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="#" class="logo">Hager Abdelkader</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#hackathons">Hackathons</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm Hager Abdelkader</h1>
+                <p>Focused on Cybersecurity, Network Security, and Ethical Hacking. I build projects to learn deeply and improve problem-solving skills.</p>
+            </div>
+            <img src="photo.jpg" alt="Hager Abdelkader" class="profile-img">
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <p>I am a Cybersecurity and Networking student at El Sewedy University of Technology, passionate about securing digital environments and understanding network vulnerabilities. I focus on practical learning through hands-on projects in networking, programming, and security analysis.</p>
+                <p>My experience includes Python and Java programming, network configuration with Cisco Packet Tracer, cybersecurity tools development on Kali Linux, and team project management. I enjoy solving complex problems and building efficient solutions that address real-world security challenges.</p>
+                <p>Through my academic journey and practical projects, I've developed a strong foundation in network security principles, ethical hacking techniques, and software development best practices.</p>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="exp-title">Network Security Trainee</div>
+                    <div class="exp-company">Talaat Moustafa Group (TMG)</div>
+                    <div class="exp-date">July 2025 – August 2025</div>
+                    <p class="exp-description">Completed hands-on training in networking infrastructure, configured routers and switches, and practiced network security measures using Cisco Packet Tracer.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-title">Cybersecurity Projects</div>
+                    <div class="exp-company">El Sewedy University Labs</div>
+                    <div class="exp-date">2024 – Present</div>
+                    <p class="exp-description">Developed multiple security tools and network simulation projects, including packet sniffers, digital forensics tools, and secure network topologies.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-title">Team Project Leader</div>
+                    <div class="exp-company">University Projects</div>
+                    <div class="exp-date">2024 – Present</div>
+                    <p class="exp-description">Led team projects including Clinic Appointment System (Python/Java), achieving perfect grades and demonstrating strong leadership and project management skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="exp-title">Bachelor's in Cyber Security</div>
+                    <div class="exp-company">El Sewedy University of Technology</div>
+                    <div class="exp-date">2024 – 2028 (Expected)</div>
+                    <p class="exp-description">Focus on Network Security, Ethical Hacking, Cryptography, Python Programming, Java OOP, and Digital Forensics.</p>
+                </div>
+                <div class="experience-card">
+                    <div class="exp-title">High School Diploma</div>
+                    <div class="exp-company">Egyptian Secondary School</div>
+                    <div class="exp-date">Graduated 2024</div>
+                    <p class="exp-description">Graduated with distinction (GPA: 3.7), with strong foundation in sciences and mathematics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2 class="section-title">Check out my latest work</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Clinic Appointment System</h3>
+                        <span class="project-date">Python/Java Project | 2024</span>
+                        <p class="project-description">A fully functional appointment management system developed as a team project. Achieved perfect grade of 20/20. Applied Object-Oriented Programming concepts and demonstrated strong teamwork and project management skills.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">Team Leadership</span>
+                        </div>
+                    </div>
+                    <div class="project-image">Project Preview</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Network Security Simulation</h3>
+                        <span class="project-date">Cisco Packet Tracer | 2024</span>
+                        <p class="project-description">Designed and implemented multiple secure network topologies. Simulated LAN/WAN connectivity, configured routers and switches, and applied basic security measures to protect network infrastructure.</p>
+                        <div class="project-tags">
+                            <span class="tag">Cisco</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Packet Tracer</span>
+                        </div>
+                    </div>
+                    <div class="project-image">Network Diagram</div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Cybersecurity Tools Development</h3>
+                        <span class="project-date">Kali Linux | Early 2025</span>
+                        <p class="project-description">Developed cybersecurity tools including packet sniffer and digital forensics analysis tools. Completed OverTheWire game challenges and gained hands-on experience with security testing methodologies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kali Linux</span>
+                            <span class="tag">Ethical Hacking</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Security Tools</span>
+                        </div>
+                    </div>
+                    <div class="project-image">Security Tools</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hackathons & Competitions -->
+        <section id="hackathons">
+            <h2 class="section-title">I like building things</h2>
+            <div class="hackathons-grid">
+                <div class="hackathon-card">
+                    <div class="hackathon-date">2024</div>
+                    <h3 class="hackathon-title">University Tech Competition</h3>
+                    <p class="hackathon-description">Participated in university-level cybersecurity competition, solving security challenges and demonstrating practical skills.</p>
+                </div>
+                <div class="hackathon-card">
+                    <div class="hackathon-date">2025</div>
+                    <h3 class="hackathon-title">Cybersecurity Challenge</h3>
+                    <p class="hackathon-description">Engaged in security capture-the-flag events, applying ethical hacking techniques to solve real-world security problems.</p>
+                </div>
+                <div class="hackathon-card">
+                    <div class="hackathon-date">2024-2025</div>
+                    <h3 class="hackathon-title">Team Project Hackathons</h3>
+                    <p class="hackathon-description">Collaborated in team-based coding sessions to develop functional applications within tight deadlines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <p>Have a question or want to connect? Feel free to reach out to me through any of the platforms below. I'm always open to discussing cybersecurity opportunities, collaborations, or just having a friendly chat about technology.</p>
+                <div class="contact-links">
+                    <a href="https://linkedin.com" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:enhagerah2006@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 Hager Abdelkader. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
